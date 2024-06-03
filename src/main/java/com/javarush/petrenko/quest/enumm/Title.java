@@ -1,8 +1,11 @@
 package com.javarush.petrenko.quest.enumm;
 
 public enum Title {
-    SHIP,
+    BEGINNING,
     CAPTAIN_BRIDGE,
-    ROOM,
-    WAREHOUSE;
+    FIND_NAME,
+    GOOD_END,
+    BAD_BEGINNING,
+    BAD_CAPTAIN_BRIDGE,
+    BAD_FIND_NAME
 }
