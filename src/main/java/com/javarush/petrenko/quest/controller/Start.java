@@ -17,15 +17,14 @@ import java.util.Optional;
 
 @WebServlet(name = "start", value = "/start")
 public class Start extends HttpServlet {
-    String name;
-    String title;
-    boolean fail, victory;
-    int number = 1;
-    int next = 0;
+    private String name;
+    public String title;
+    public boolean fail, victory;
+    public int number = 1;
+    public int next = 0;
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
