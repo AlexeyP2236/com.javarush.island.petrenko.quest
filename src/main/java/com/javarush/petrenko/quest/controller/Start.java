@@ -4,7 +4,6 @@ import com.javarush.petrenko.quest.db.DB;
 import com.javarush.petrenko.quest.entity.Quest;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,10 +21,6 @@ public class Start extends HttpServlet {
     public boolean fail, victory;
     public int number = 1;
     public int next = 0;
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        super.init(config);
-    }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         DB questBD = new DB();
