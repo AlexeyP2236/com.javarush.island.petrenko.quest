@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.util.Optional;
 
 @WebServlet(name = "start", value = "/start")
@@ -28,6 +30,7 @@ public class Start extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         req.setAttribute("text", questService.searchStringsQuest(title));
         req.setAttribute("name", name);
         req.setAttribute("fail", questService.searchFailQuest(title));
@@ -41,6 +44,7 @@ public class Start extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
         name = req.getParameter("name");
         title = req.getParameter("title");
         Optional<String> optionalNumber = Optional.ofNullable(req.getParameter("number"));
