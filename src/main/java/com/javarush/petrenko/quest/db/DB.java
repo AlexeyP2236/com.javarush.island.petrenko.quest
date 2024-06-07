@@ -2,11 +2,13 @@ package com.javarush.petrenko.quest.db;
 
 import com.javarush.petrenko.quest.entity.Quest;
 import com.javarush.petrenko.quest.text.Text;
+import lombok.Getter;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+@Getter
 public class DB {
     private final List<Quest> questBD;
     public DB() {
@@ -21,7 +23,4 @@ public class DB {
             ).collect(Collectors.toList());
     }
 
-    public List<Quest> getQuestBD() {
-        return questBD;
-    }
 }

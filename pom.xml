@@ -18,6 +18,7 @@
     </properties>
 
     <dependencies>
+        <!--WEB-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -29,7 +30,7 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
+        <!--TEST-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -48,18 +49,14 @@
             <version>1.10.19</version>
             <scope>test</scope>
         </dependency>
+        <!--OTHER-->
         <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>1.10.19</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.hamcrest</groupId>
-                    <artifactId>hamcrest-core</artifactId>
-                </exclusion>
-            </exclusions>
-            <scope>test</scope>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>

@@ -1,7 +1,9 @@
 package com.javarush.petrenko.quest.entity;
 
-import java.util.List;
+import lombok.Getter;
 
+import java.util.List;
+@Getter
 public class Quest {
     private final String title;
     private final List<String> strings;
@@ -23,29 +25,5 @@ public class Quest {
     public Quest(String title, List<String> strings, boolean fail, boolean victory) {
         this(title, strings, fail);
         this.victory = victory;
-    }
-
-    public String  getTitle() {
-        return title;
-    }
-
-    public List<String> getStrings() {
-        return strings;
-    }
-
-    public boolean isFail() {
-        return fail;
-    }
-
-    public boolean isVictory() {
-        return victory;
-    }
-
-    @Override
-    public String toString() {
-        return "Quest{" +
-                "title=" + title +
-                ", strings=" + strings +
-                '}';
     }
 }

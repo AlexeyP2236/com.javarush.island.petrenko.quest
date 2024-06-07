@@ -10,10 +10,21 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <style>
+        .background {
+        <c:if test="${fail}">
+            background: indianred;
+        </c:if>
+        <c:if test="${victory}">
+            background: greenyellow;
+        </c:if>
+        }
+    </style>
+</head>
 <body class="text-center">
 <div class="modal position-static d-block bg-body-secondary p-4 py-md-5">
     <div class="modal-dialog">
-        <div class="modal-content rounded-3 shadow">
+        <div class="modal-content rounded-3 shadow background">
             <div class="modal-body p-4 text-center">
                 <p class="mb-0">Прохождение: ${number}</p>
                 <p class="mb-0">${name} ${text.get(0)}</p>
