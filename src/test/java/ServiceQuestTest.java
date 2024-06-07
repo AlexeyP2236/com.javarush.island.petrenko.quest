@@ -1,5 +1,4 @@
 import com.javarush.petrenko.quest.db.DB;
-import com.javarush.petrenko.quest.entity.Quest;
 import com.javarush.petrenko.quest.service.QuestService;
 import com.javarush.petrenko.quest.text.Text;
 import org.junit.jupiter.api.Test;
