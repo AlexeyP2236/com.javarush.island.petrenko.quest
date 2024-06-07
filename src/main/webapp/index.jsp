@@ -8,7 +8,7 @@
 
 </head>
 <body class="text-center">
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5">
+<div class="modal position-static d-block bg-body-secondary p-4 py-md-5">
     <div class="modal-dialog">
         <div class="modal-content rounded-3 shadow">
             <form action="start" method="post">

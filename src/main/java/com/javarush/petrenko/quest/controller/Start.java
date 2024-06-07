@@ -4,6 +4,7 @@ import com.javarush.petrenko.quest.db.DB;
 import com.javarush.petrenko.quest.entity.Quest;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,25 +17,41 @@ import java.util.Optional;
 
 @WebServlet(name = "start", value = "/start")
 public class Start extends HttpServlet {
-    private String name;
+    private DB questBD = new DB();
+    public String name;
     public String title;
     public boolean fail, victory;
     public int number = 1;
     public int next = 0;
+
+    public List<String> searchStringsQuestBD() {
+        List<String> strings = new ArrayList<>();
+        for (Quest quest:
+                questBD.getQuestBD()) {
+            if (quest.getTitle().equals(title)) {
+                strings = quest.getStrings();
+                break;
+            }
+        }
+        return strings;
+    }
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        DB questBD = new DB();
-        List<String> str = new ArrayList<>();
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+    }
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         for (Quest q :
                 questBD.getQuestBD()) {
             if (q.getTitle().equals(title)) {
-                str = q.getStrings();
                 fail = q.isFail();
                 victory = q.isVictory();
                 break;
             }
         }
-        req.setAttribute("text", str);
+        req.setAttribute("text", searchStringsQuestBD());
         req.setAttribute("name", name);
         req.setAttribute("fail", fail);
         req.setAttribute("title", title);
@@ -45,7 +62,7 @@ public class Start extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         name = req.getParameter("name");
         //вот это перенести в индекс
         //if (name.isEmpty()) name = "Ноунэйм";

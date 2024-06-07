@@ -11,7 +11,7 @@
             crossorigin="anonymous"></script>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <body class="text-center">
-<div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5">
+<div class="modal position-static d-block bg-body-secondary p-4 py-md-5">
     <div class="modal-dialog">
         <div class="modal-content rounded-3 shadow">
             <div class="modal-body p-4 text-center">
